@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 这是模板 -->
+  <!-- <div class="abc">
+      <span class="abc-y">这是less的颜色</span>
+      <img src="../src/a.jpg" alt="">
+    </div> -->
+  <a onclick="go('/a')" >去A页面</a>
+  <a onclick="go('/b')" >去B页面</a>
+  <div id="container"></div>
+  <script>
+    //我们要改变路径并且不刷新页面 history模式
+    function go(path) {
+      history.pushState(null,{},path)//使用replaceState的话不会有历史记录,不能点击浏览器的前进后退按钮
+      if(path==='/a'){
+        container.innerHTML = '这是a页面'
+      }else{  
+        container.innerHTML = '这是b页面'
+      }
+    }
+    //state  监听state改变的方法
+    window.addEventListener('popstate',function() {//页面前进后退时触发
+      if (location.pathname==='/a') {
+        container.innerHTML = '这是a页面'        
+      }else{
+        container.innerHTML = '这是b页面'        
+      }
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // let xhr = new XMLHttpRequest();
+    //   xhr.open("get", 'http://localhost:9002/list', true);
+    //   xhr.send();
+    //   xhr.onload = function(data) {
+    //     console.log(data);
+    //   };
+    // console.log(12)
+    // let xhr = new XMLHttpRequest();
+    //   xhr.open("get", "/user", true);
+    //   xhr.send();
+    //   xhr.onload = function() {
+    //     console.log(xhr.response);
+    // };
+  </script>
+</body>
+
+</html>

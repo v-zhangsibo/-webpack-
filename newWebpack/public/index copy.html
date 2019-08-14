@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+</head>
+
+<body>
+  <a href="#a">去A页面</a>
+  <a href="#b">去B页面</a>
+  <div id="container"></div>
+  <script>
+    window.addEventListener('hashchange',function() {//监听hash变化
+        if(location.hash == '#a'){
+          container.innerHTML = '这是a页面'
+        }else{
+          container.innerHTML = '这是b页面'
+        }
+    })
+  </script>
+</body>
+
+</html>

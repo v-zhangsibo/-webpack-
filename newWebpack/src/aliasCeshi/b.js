@@ -1,0 +1,1 @@
+export default '俺是b.js'
